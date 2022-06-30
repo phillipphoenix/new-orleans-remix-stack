@@ -60,16 +60,20 @@ async function seed() {
 }
 
 seed()
-  .catch((e) => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    try {
-      await prisma.$disconnect();
-      process.exit(0);
-    } catch (e) {
-      console.error(e);
-      process.exit(1);
-    }
-  });
+  .catch((e) => console.error(e))
+  .finally(() => process.exit(0));
+
+// seed()
+//   .catch((e) => {
+//     console.error(e);
+//     process.exit(1);
+//   })
+//   .finally(async () => {
+//     try {
+//       await prisma.$disconnect();
+//       process.exit(0);
+//     } catch (e) {
+//       console.error(e);
+//       process.exit(1);
+//     }
+//   });
