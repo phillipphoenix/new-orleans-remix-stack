@@ -1,8 +1,5 @@
-import type { Note, User } from "@prisma/client";
-import { PrismaClient } from "@prisma/client";
-import type { LoaderFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link } from "@remix-run/react";
+import { motion } from "framer-motion";
 import { Button } from "~/atoms/buttons/Button";
 import { Typography } from "~/atoms/Typography";
 import { Card } from "~/components/cards/Card";
@@ -11,6 +8,19 @@ import { CardFooter } from "~/components/cards/CardFooter";
 import { CardHeader } from "~/components/cards/CardHeader";
 
 export default function Index() {
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: -10 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
     <div className=" h-screen bg-gradient-to-br from-indigo-700 via-purple-800 to-pink-900">
       <div className="container mx-auto px-4 py-20">
@@ -32,17 +42,31 @@ export default function Index() {
                 </span>
               </>
             </Typography>
-            <div className="grid gap-8 p-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-              <span className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg">
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className=" grid gap-8 p-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <motion.span
+                variants={item}
+                className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg"
+              >
                 Eslint and Prettier
-              </span>
-              <span className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg">
+              </motion.span>
+              <motion.span
+                variants={item}
+                className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg"
+              >
                 Tailwind CSS for styling
-              </span>
-              <span className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg">
+              </motion.span>
+              <motion.span
+                variants={item}
+                className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg"
+              >
                 Prisma for DB access
-              </span>
-            </div>
+              </motion.span>
+            </motion.div>
           </CardBody>
           <CardFooter>
             <div className="my-10 flex w-full flex-row justify-center">
