@@ -16,7 +16,8 @@
     "setup": "prisma generate && prisma migrate deploy && prisma db seed",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "heroku-postbuild": "run-s build:* && setup"
   },
   "prettier": {},
   "eslintIgnore": [
