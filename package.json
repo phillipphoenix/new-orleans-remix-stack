@@ -17,7 +17,7 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
     "typecheck": "tsc -b",
-    "heroku-postbuild": "run-s build:* && setup",
+    "heroku-postbuild": "run-s build:* && npm run setup",
     "start": "remix-serve build"
   },
   "prettier": {},
