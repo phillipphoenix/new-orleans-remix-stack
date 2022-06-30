@@ -11,7 +11,7 @@ export default function Index() {
   const container = {
     show: {
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
       },
     },
   };
@@ -20,6 +20,13 @@ export default function Index() {
     hidden: { opacity: 0, y: -10 },
     show: { opacity: 1, y: 0 },
   };
+
+  const features = [
+    "Eslint and Prettier",
+    "Tailwind CSS for styling",
+    "Prisma for DB access",
+    "Framer Motion for animation",
+  ];
 
   return (
     <div className=" h-screen bg-gradient-to-br from-indigo-700 via-purple-800 to-pink-900">
@@ -46,26 +53,17 @@ export default function Index() {
               variants={container}
               initial="hidden"
               animate="show"
-              className=" grid gap-8 p-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              className=" grid gap-8 p-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
             >
-              <motion.span
-                variants={item}
-                className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg"
-              >
-                Eslint and Prettier
-              </motion.span>
-              <motion.span
-                variants={item}
-                className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg"
-              >
-                Tailwind CSS for styling
-              </motion.span>
-              <motion.span
-                variants={item}
-                className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/40 p-3 text-center text-white shadow-lg"
-              >
-                Prisma for DB access
-              </motion.span>
+              {features.map((feature) => (
+                <motion.span
+                  key={feature}
+                  variants={item}
+                  className="rounded-lg border-2 border-dashed border-indigo-500 bg-indigo-500/60 p-3 text-center font-bold text-white shadow-lg"
+                >
+                  {feature}
+                </motion.span>
+              ))}
             </motion.div>
           </CardBody>
           <CardFooter>
