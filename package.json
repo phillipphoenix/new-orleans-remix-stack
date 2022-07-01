@@ -18,7 +18,7 @@
     "prisma:studio": "prisma studio",
     "typecheck": "tsc -b",
     "heroku-postbuild": "run-s build:* && npm run setup",
-    "start": "cross-env NODE_ENV=production node ./express-server.js"
+    "start": "cross-env NODE_ENV=production node ./server.js"
   },
   "prettier": {},
   "eslintIgnore": [

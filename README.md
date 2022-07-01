@@ -35,12 +35,3 @@ Open up [http://localhost:3000](http://localhost:3000) and you should be ready t
 
 - [https://merakiui.com/](https://merakiui.com/)
 - [https://tailblocks.cc/](https://tailblocks.cc/)
-
-## Deployment
-
-### Heroku
-
-Deployment to Heroku requires Remix to make use of Express to serve the project.
-This is set up in the branch `deployment/heroku`.
-
-To use this setup, merge this branch back into the main branch.
