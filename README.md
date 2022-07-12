@@ -6,11 +6,13 @@ This is the New Orleans (Jazz) template which uses the following setup:
 - Tailwind CSS for styling.
 - Prisma for DB access (default SQLite).
 
+It is set up so it can deploy to Heroku, but behind the scenes it just runs Express (see server.js).
+
 Read the Remix docs here:
 
 - [Remix Docs](https://remix.run/docs)
 
-## First time installation
+## First time running locally.
 
 If this is the very first time running the project, you might need to create an initial migration with Prisma.
 To do this run the command `prisma migrate dev --name init`. You can always run it using `npx` like this: `npx prisma migrate dev --name init`.
