@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 import { useMemo } from "react";
 import { useClassnames } from "~/hooks/useVariant";
 
@@ -12,7 +12,7 @@ const buttonColourSchemes: Record<ButtonColourSchemes, string> = {
 };
 
 export type ButtonProps = {
-  children: string;
+  children: string | ReactNode;
   colourScheme?: ButtonColourSchemes;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 

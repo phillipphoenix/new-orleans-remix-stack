@@ -13,12 +13,12 @@ type TypographyVariant =
   | "paragraph";
 
 const variantClassnames: Record<TypographyVariant, string> = {
-  h1: "text-5xl font-semibold font-serif mb-4",
-  h2: "text-2xl font-semibold font-serif mb-4",
-  h3: "text-xl font-semibold font-serif mb-3",
-  h4: "text-lg font-semibold font-sans mb-2",
-  h5: "text-md font-semibold font-sans mb-1",
-  h6: "text-sm font-semibold font-sans mb-1",
+  h1: "text-5xl leading-normal font-semibold font-serif mb-4",
+  h2: "text-4xl leading-normal font-semibold font-serif mb-4",
+  h3: "text-2xl  leading-normal font-semibold font-serif mb-3",
+  h4: "text-lg  leading-normal font-semibold font-sans mb-2",
+  h5: "text-md  leading-normal font-semibold font-sans mb-1",
+  h6: "text-sm  leading-normal font-semibold font-sans mb-1",
   lead: "text-base font-semibold font-sans",
   paragraph: "text-base font-sans",
 };
