@@ -76,13 +76,6 @@ export default function TypographyPage() {
               Bright vixens jump; dozy fowl quack.
             </Typography>
           </CardBody>
-          <CardFooter>
-            <div className="my-10 flex w-full flex-row justify-center">
-              <Link to="/notes">
-                <Button className="px-10 py-5 text-xl">See notes</Button>
-              </Link>
-            </div>
-          </CardFooter>
         </Card>
       </div>
     </div>
